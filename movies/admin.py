@@ -9,19 +9,20 @@ from movies.models import Review
 
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['title','year_of_release']
+    filter_horizontal = ['directors','actors','genres']
 @admin.register(TypeMovie)
 class TypeMovieAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['id','title','description']
 @admin.register(JobTitle)
 class JobTitleAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['id','job_title','description']
 @admin.register(Artist)
 class ArtistAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['id','full_name','date_of_birth']
 @admin.register(Genre)
 class GenreAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['id','title','description']
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
     pass    
